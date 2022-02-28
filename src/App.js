@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import receipts from './store/data';
+import Forms from './components/forms';
+import Receipt from './components/receipt';
 
 function App() {
+    const [receipt, setReceipt] = useState(receipts);
+
+
+    
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+    <Forms
+    receipt = { receipt }
+    setReceipt = { setReceipt }
+    />
+    <Receipt
+    receipt = { receipt }
+    />
+
     </div>
   );
 }
